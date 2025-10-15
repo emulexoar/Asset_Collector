@@ -57,7 +57,7 @@ powershell -ExecutionPolicy Bypass -File asset_collect.ps1
 - **Content**: All collected system information in a structured format
 
 ### Email Report
-- **Recipient**: CIT.Automations@robinsonsretail.com.ph
+- **Recipient**: "your_recipient@company.domain"
 - **Subject**: "IT Asset Report [ComputerName]"
 - **Format**: HTML email with embedded data table
 - **Attachment**: The generated CSV file
@@ -166,7 +166,7 @@ This project includes a **Power Automate flow** that automatically processes the
 
 For questions, issues, or feature requests, please contact:
 **CIT Automation / AI / UX Team**  
-Email: CIT.Automations@robinsonsretail.com.ph
+
 
 ---
 
