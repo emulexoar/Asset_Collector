@@ -62,6 +62,36 @@ powershell -ExecutionPolicy Bypass -File asset_collect.ps1
 - **Format**: HTML email with embedded data table
 - **Attachment**: The generated CSV file
 
+## Power Automate Integration
+
+### IT_Asset_Collection Write to SPL Flow
+
+This project includes a **Power Automate flow** that automatically processes the asset collection emails and integrates with SharePoint:
+
+**Flow Name**: `[ITRM R2] IT_Asset_Collection Write to SPL`
+
+**Functionality**:
+- **Monitors** the CIT.Automations email inbox for asset collection reports
+- **Processes** the attached CSV files from the asset collection script
+- **Updates** existing SharePoint list records if the asset already exists
+- **Creates** new SharePoint list entries for new assets
+- **Notifies** the asset owner via email about the asset registration/update
+
+**Benefits**:
+- **Automated SharePoint Integration**: Eliminates manual data entry into SharePoint lists
+- **Real-time Updates**: Asset information is immediately available in the SharePoint database
+- **Owner Notifications**: Asset owners are automatically informed about their registered equipment
+- **Data Consistency**: Ensures standardized asset tracking across the organization
+
+**Process Flow**:
+1. Asset collection script emails report to CIT.Automations
+2. Power Automate flow detects new asset report email
+3. Flow extracts and parses the CSV attachment
+4. Flow checks SharePoint list for existing asset record
+5. Flow either updates existing record or creates new entry
+6. Flow sends notification email to the asset owner
+7. Asset tracking is completed and recorded in SharePoint
+
 ## System Requirements
 
 - **Operating System**: Windows (any version with WMI support)
