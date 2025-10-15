@@ -85,7 +85,6 @@ $csvTable = Import-Csv -Path "asset_report.csv" | ConvertTo-Html -Fragment | Out
 
 # Email settings for Outlook (using default profile)
 $to = "CIT.Automations@robinsonsretail.com.ph"
-#$to = "Marvin.DelosAngeles@robinsonsretail.com.ph"
 $subject = "IT Asset Report $($system.Name)"
 $body = @"
 <html>
@@ -108,4 +107,5 @@ $mail.Attachments.Add((Resolve-Path $attachment).Path)
 $mail.Send()
 
 Clear-Host
+
 write-host "Asset report sent successfully to IT Asset Management team."
